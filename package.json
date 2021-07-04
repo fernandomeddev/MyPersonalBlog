@@ -1,0 +1,26 @@
+{
+  "name": "mypersonalblog",
+  "version": "1.0.0",
+  "description": "Meu Blog Pessoal onde pretendo, publicar minhas experiêcias pessoais e profissionais e talvez compartilhar um poco de grozélia também!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandomeddev/MyPersonalBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandomeddev/MyPersonalBlog/issues"
+  },
+  "homepage": "https://github.com/fernandomeddev/MyPersonalBlog#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.4"
+  }
+}
