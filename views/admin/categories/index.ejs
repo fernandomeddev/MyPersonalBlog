@@ -1,0 +1,47 @@
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
+<div class="container">
+    <hr>
+    <h1>Categoria</h1>
+    <hr>
+    <a type="button" class="btn btn-outline-secondary " href="/admin/categories/new">Adicionar Categoria</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Slug</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% categories.forEach(category => {%>
+            <tr>
+                <th><%=category.id%></th>
+                <th><%=category.title%></th>
+                <th><%=category.slug%></th>
+                <th>
+                    <button class="btn btn-warning">Editar</button>
+                    <form method="POST" action="/categories/delete" style="display: inline;" onsubmit="deleteValidation(event, this)">
+                        <input type="hidden" name="id" value="<%= category.id %>">
+                        <button class="btn btn-danger">Deletar</button>
+                    </form>
+                    
+                </th>
+            </tr>
+            <%}) %>
+        </tbody>
+    </table>
+</div>
+<%- include ('../../partials/footer.ejs') %>
+<script>
+    function deleteValidation(event, form){
+        event.preventDefault();
+        var decision = confirm("You sure about that?");
+        if(decision){
+            form.submit();
+        }else{
+            console.log("I'm not sure about that!");
+        }
+    }
+</script>
