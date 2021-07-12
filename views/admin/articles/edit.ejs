@@ -1,15 +1,15 @@
 <%- include ('../../partials/header.ejs') %>
 <body>
-    <%- include ('../../partials/navbar.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
     <div container>
         <div class="card">
             <div class="card-title">
-                <h2>New Article</h2>
+                <h2>Editar</h2>
                 <hr>
             </div>
             <div class="card-body">
                 <form method="POST" action="/articles/save">
-                    <input class="form-control" type="text" name="title" placeholder="Define the article title"><br>
+                    <input class="form-control" type="text" name="title" placeholder="Define the article title" value=""><br>
                     <textarea class="form-control" placeholder="Write your article here!" id="article" name="body"></textarea>
                     <br>
                     <label>Category</label>
@@ -19,12 +19,10 @@
                         <%  }) %>
                     </select>
                     <br>
-                    <button class="btn btn-success">Publish</button>
+                    <button class="btn btn-success">Atulizar</button>
                 </form>
             </div>
         </div>
-        
-
     </div>
 </body>    
 <%- include ('../../partials/footer.ejs') %>
