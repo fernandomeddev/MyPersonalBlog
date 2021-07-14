@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const session = require("express-session");
 const connection = require("./database/database.js")
 const categoriesController = require("./categories/CategoriesController");
 const articlesController = require("./articles/articlesController");
@@ -13,8 +14,14 @@ const User = require("./users/User");
 
 
 
+
 //Defino o EJs como View engine
 app.set('view engine', 'ejs');
+
+//sessions
+app.use(session({
+    secret:"bizonho", cookie: { maxAge: 30000000}
+}))
 
 // Carrego os arquivos estaticos
 app.use(express.static('public'));
@@ -36,6 +43,7 @@ connection
 app.use('/',categoriesController);
 app.use('/',articlesController);
 app.use('/',usersController);
+
 
 app.get("/", (req, res) => {
     Article.findAll({
